@@ -4,35 +4,32 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
 
-    <ImageButton
+    <ImageView
         android:id="@+id/button_play_pause"
         android:layout_width="36dp"
         android:layout_height="36dp"
-        android:background="?attr/selectableItemBackgroundBorderless"
         android:src="@android:drawable/ic_media_play"
         android:tint="@color/colorGreen"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageButton
+    <ImageView
         android:id="@+id/button_add"
         android:layout_width="36dp"
         android:layout_height="36dp"
-        android:background="?attr/selectableItemBackgroundBorderless"
         android:src="@android:drawable/ic_input_add"
-        android:tint="#000000"
         app:layout_constraintEnd_toEndOf="parent"
+        android:tint="#FFC107"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/button_play_pause" />
 
-    <ImageButton
+    <ImageView
         android:id="@+id/button_close"
         android:layout_width="36dp"
         android:layout_height="36dp"
-        android:background="?attr/selectableItemBackgroundBorderless"
-        android:src="@android:drawable/ic_delete"
-        android:tint="@android:color/darker_gray"
+        android:src="@android:drawable/ic_menu_close_clear_cancel"
+        android:tint="@color/colorDarkGray"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/button_add" />
