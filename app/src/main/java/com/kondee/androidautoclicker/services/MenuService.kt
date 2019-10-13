@@ -12,6 +12,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.WindowManager
 import android.widget.ImageView
+import androidx.core.graphics.component1
+import androidx.core.graphics.component2
 import com.kondee.androidautoclicker.R
 
 class MenuService : Service() {
@@ -46,8 +48,7 @@ class MenuService : Service() {
         val size = Point()
         display?.getRealSize(size)
 
-        val width = size.x
-        val height = size.y
+        val (width, height) = size
 
         layoutParams = WindowManager.LayoutParams(
                 WindowManager.LayoutParams.WRAP_CONTENT,
