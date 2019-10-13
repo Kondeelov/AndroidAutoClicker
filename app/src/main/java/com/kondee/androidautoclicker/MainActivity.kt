@@ -4,9 +4,9 @@ import android.annotation.TargetApi
 import android.content.Intent
 import android.net.Uri
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.Settings
+import androidx.appcompat.app.AppCompatActivity
 import com.kondee.androidautoclicker.services.MenuService
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -23,10 +23,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun initInstance() {
         button.setOnClickListener {
-            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.N
-                    || Settings.canDrawOverlays(this)) {
-                serviceIntent = Intent(this@MainActivity,
-                        MenuService::class.java)
+            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.N || Settings.canDrawOverlays(this)) {
+                serviceIntent = Intent(this@MainActivity, MenuService::class.java)
                 startService(serviceIntent)
                 onBackPressed()
             } else {

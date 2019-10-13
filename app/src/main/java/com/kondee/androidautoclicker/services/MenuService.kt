@@ -32,8 +32,6 @@ class MenuService : Service() {
 
         view = LayoutInflater.from(this).inflate(R.layout.layout_floating_menu, null)
 
-        val buttonPlayPause: ImageView? = view?.findViewById(R.id.button_play_pause)
-        val buttonAdd: ImageView? = view?.findViewById(R.id.button_add)
         val buttonClose: ImageView? = view?.findViewById(R.id.button_close)
 
         val overlayParam = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -45,9 +43,6 @@ class MenuService : Service() {
         val display = windowManager?.defaultDisplay
         val size = Point()
         display?.getRealSize(size)
-
-        val width = size.x
-        val height = size.y
 
         layoutParams = WindowManager.LayoutParams(
                 WindowManager.LayoutParams.WRAP_CONTENT,
