@@ -12,6 +12,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.WindowManager
 import android.widget.ImageView
+import androidx.core.graphics.component1
+import androidx.core.graphics.component2
 import com.kondee.androidautoclicker.R
 
 class MenuService : Service() {
@@ -32,6 +34,8 @@ class MenuService : Service() {
 
         view = LayoutInflater.from(this).inflate(R.layout.layout_floating_menu, null)
 
+        val buttonPlayPause: ImageView? = view?.findViewById(R.id.button_play_pause)
+        val buttonAdd: ImageView? = view?.findViewById(R.id.button_add)
         val buttonClose: ImageView? = view?.findViewById(R.id.button_close)
 
         val overlayParam = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -43,6 +47,8 @@ class MenuService : Service() {
         val display = windowManager?.defaultDisplay
         val size = Point()
         display?.getRealSize(size)
+
+        val (width, height) = size
 
         layoutParams = WindowManager.LayoutParams(
                 WindowManager.LayoutParams.WRAP_CONTENT,
